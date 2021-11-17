@@ -5,6 +5,7 @@
 #include <set>
 #include <map>
 #include <fstream>
+#include <algorithm>
 #include "lib.h"
 
 using namespace std;
@@ -312,7 +313,7 @@ int main(int argc, char *argv[]) {
                            std::istreambuf_iterator<char>());
     in2.close();
 
-    char *data = input_file.data();
+    char *data = const_cast<char *>(input_file.data());
     size_t shift = 0;
 
     size_t pos = 0;

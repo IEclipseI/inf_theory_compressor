@@ -5,7 +5,6 @@
 #include <set>
 #include <map>
 #include <fstream>
-#include <execution>
 #include <algorithm>
 #include "lib.h"
 
@@ -279,7 +278,7 @@ Node *read_tree(char *data, unsigned long alph_size) {
 int main(int argc, char *argv[]) {
     //coding
     if (argc < 2) {
-        cout << "compressor.exe input_file <output_file>" << endl;
+        cout << "coder.exe input_file <output_file>" << endl;
         return 0;
     }
 
@@ -287,7 +286,6 @@ int main(int argc, char *argv[]) {
     vector<uint8_t> input((std::istreambuf_iterator<char>(in)),
                            std::istreambuf_iterator<char>());
 //
-    cout << "argv[1] " << argv[1] << endl;
 //    const vector<uint8_t> input = convertToUintVector("abacaba");
 
     set<uint8_t> alph;
